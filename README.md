@@ -107,7 +107,7 @@ Database called 3 times.
 >>> 
 ```
 
-## Caching data retrieved from database and retrieving without having to hit the database again
+## Retrieving Data from a Cache
 
 Imagine the total number of network calls that your application will make as users start to visit your site. If 1,000 users hit the API that retrieves cookbook recipes, then your application will query the database 3,000 times. That number only grows as your application scales. Luckily, these database queries are great candidates for caching. The recipes in a cookbook rarely change, if ever. Also, since viewing cookbooks is the central theme of the app, the API retrieving the recipes is guaranteed to be called frequently. 
 
