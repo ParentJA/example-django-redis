@@ -172,6 +172,7 @@ You can see the result of the deserialization with some simple Python code.
 >>> for recipe in recipes:
 >>>     foods = [ingredient.food.name for ingredient in recipe.ingredient_set.all()]
 >>>     print '{recipe}: {foods}'.format(recipe=recipe, foods=', '.join(foods))
+>>>
 ```
 
 **NOTE: Run the `flushall` command on the Redis CLI to clear all of the keys from the data store.**
