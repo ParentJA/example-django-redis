@@ -4,7 +4,7 @@ from .models import Recipe
 
 
 def get_recipes_without_cache():
-	# Reset database queries.
+    # Reset database queries.
     reset_queries()
 
     # Retrieve recipes.
