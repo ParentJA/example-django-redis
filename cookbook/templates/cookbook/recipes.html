@@ -6,8 +6,8 @@
 {% for recipe in recipes %}
 <h1>{{ recipe.name }}</h1>
 <ul>
-  {% for ingredient in recipe.ingredient_set.all %}
-  <li>{{ ingredient.food.name }}</li>
+  {% for ingredient in recipe.ingredients.all %}
+  <li>{{ ingredient.name }}</li>
   {% endfor %}
 </ul>
 {% endfor %}
