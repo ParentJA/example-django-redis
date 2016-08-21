@@ -8,7 +8,7 @@ def get_recipes_without_cache():
     reset_queries()
 
     # Retrieve recipes.
-    recipes = list(Recipe.objects.prefetch_related('ingredients'))
+    recipes = list(Recipe.objects.prefetch_related('ingredient_set__food'))
 
     # Count database queries.
     print 'Database called {count} times.'.format(count=len(connection.queries))
@@ -24,7 +24,7 @@ def get_recipes_with_cache():
     if 'recipes' in cache:
         recipes = cache.get('recipes')
     else:
-        recipes = list(Recipe.objects.prefetch_related('ingredients'))
+        recipes = list(Recipe.objects.prefetch_related('ingredient_set__food'))
         cache.set('recipes', recipes)
 
     # Count database queries.
